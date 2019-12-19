@@ -1,0 +1,6 @@
+C:\Users\Kiranti\source\repos\Labor rabota №1\OOP 3-kurs\bin\Debug\OOP 3-kurs.exe.config
+C:\Users\Kiranti\source\repos\Labor rabota №1\OOP 3-kurs\bin\Debug\OOP 3-kurs.exe
+C:\Users\Kiranti\source\repos\Labor rabota №1\OOP 3-kurs\bin\Debug\OOP 3-kurs.pdb
+C:\Users\Kiranti\source\repos\Labor rabota №1\OOP 3-kurs\obj\Debug\OOP 3-kurs.csprojAssemblyReference.cache
+C:\Users\Kiranti\source\repos\Labor rabota №1\OOP 3-kurs\obj\Debug\OOP 3-kurs.exe
+C:\Users\Kiranti\source\repos\Labor rabota №1\OOP 3-kurs\obj\Debug\OOP 3-kurs.pdb

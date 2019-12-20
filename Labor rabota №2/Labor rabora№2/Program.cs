@@ -19,8 +19,10 @@ d.	Продемонстрируйте работу с неявно типизи�
 e.	Продемонстрируйте пример работы с Nullable переменной.
  */
 
+
+
             //a) Определите переменные всех возможных примитивных типов С#  и проинициализируйте их.
-                      int varInt; varInt = -42;
+            int varInt; varInt = -42;
                       uint varUint = 553;
                       long varLong; varLong = -3211;
                       ulong varUlong = 4454;
@@ -248,8 +250,47 @@ e.	Продемонстрируйте пример работы с Nullable пе
             Console.WriteLine("1:{0} 2:{1} 3:{2} 4:{3} 5:{4}", varT1, varT2, varT3, varT4, varT5);
             var varTurple2 = Tuple.Create(10, "Строка", 'x', "Ещё строка", 222);
             Console.WriteLine(varTurple.Equals(varTurple2)); //сравнение строк
-
+            Console.WriteLine("\n\n\n");
             Console.ReadKey();
+            /*5)	Создайте локальную функцию в main и вызовите ее. Формальные параметры функции – массив целых и строка.
+              Функция должна вернуть кортеж, содержащий: максимальный и минимальный элементы массива, сумму элементов 
+              массива и первую букву строки.*/
+
+            string StrFunc = "ops";
+          //  string StrFunc = Console.ReadLine();
+            int[] ArrFunc = new int[5];
+            Random ran2 = new Random();
+            for (int i =0; i<5;i++)
+            {
+                ArrFunc[i] = ran2.Next(-100, 100);
+                Console.Write(ArrFunc[i]+" ");
+            }
+
+            Tuple<int, int, int, char> turpleRet2 = minMax(ArrFunc, StrFunc);
+            var (varR1, varR2, varR3, varR4) = turpleRet2;
+            Console.WriteLine("\n\nМинимальный элемент массива: {0}" +
+                "\nМаксимальный элемент массива: {1}" +
+                "\nСумма элементов массива: {2}" +
+                "\nПервая буква строки: {3}", varR1, varR2, varR3, varR4);
+            Console.ReadKey();
+
+
+
+            Tuple<int,int,int, char> minMax(int[] meArr, string meStr)
+            {
+                int max=meArr[0], min=meArr[0], sum = 0;
+
+                for(int i =0; i<5;i++)
+                {
+                    if (meArr[i] < min) min = meArr[i];
+                    if (meArr[i] > max) max = meArr[i];
+                    sum += meArr[i];
+                }
+                var turpleRet = Tuple.Create(min, max, sum, StrFunc[0]);
+               return turpleRet;
+
+
+            }
         }
     }
 }

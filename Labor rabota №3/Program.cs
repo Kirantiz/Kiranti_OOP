@@ -6,20 +6,147 @@ using System.Threading.Tasks;
 
 namespace Labor_rabota__3
 {
+
+    class Airline
+    {
+        private string name;
+        private string destination;
+        private byte flight;
+        private string typeAirplane;
+        private float dateTime;
+        private string dayWeek;
+
+        public string Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
+        public string Destination
+        {
+            get { return destination; }
+            set { destination = value; }
+        }
+        public byte Flight
+        {
+            get { return flight; }
+            set {
+                if (value < 1)
+                    flight = 1;
+                else flight = value;
+            }
+        }
+        public string TypeAirplane
+        {
+            get { return typeAirplane; }
+            set { typeAirplane = value; }
+        }
+        public float DateTime
+        {
+            get { return dateTime; }
+            set
+            {
+                if (value > 24.59f) dateTime = 24.59f;
+                else if (value % 1 * 100 > 59)
+                {
+                    dateTime = Convert.ToInt32(dateTime);
+                }
+                else dateTime = value;
+            }
+        }
+        public string DayWeek
+        {
+            get { return dayWeek; }
+            set
+            { dayWeek = value; }
+        }
+
+        public static int count = 0;
+        readonly static string week = "mo tu we th fr sa su";
+
+        public Airline(string _def)
+        {
+            Name = "belavia";
+            Destination = "Minsk";
+            Flight = 3;
+            TypeAirplane = "boing 747";
+            DateTime = 21.30f;
+            DayWeek = "mon, wed";
+            count++;
+        }
+        static Airline ()
+        {
+            Console.WriteLine("Статичный контсруктор");
+          
+        }
+        
+        public Airline() //пустой
+        {
+            count++;
+        }
+
+        public Airline(string name, string destination, byte flight, string typeAirplane, float dateTime, string dayWeek) //по умолчанию
+        {
+                this.Name = name;
+                this.Destination = destination;
+                this.Flight = flight;
+                this.TypeAirplane = typeAirplane;
+                this.DateTime = dateTime;
+                this.DayWeek = dayWeek;
+                count++;
+        }
+
+
+        public void Print()
+        {
+            Console.WriteLine("Name: " + Name + "\t\tHash code: {0}", Name.GetHashCode());
+            Console.WriteLine("destination: " + Destination + "\tHash code: {0}", Destination.GetHashCode());
+            Console.WriteLine("flight: " + Flight + "\t\tHash code: {0}", Flight.GetHashCode());
+            Console.WriteLine("typeAirplane: " + TypeAirplane + "\tHash code: {0}", TypeAirplane.GetHashCode());
+            Console.WriteLine("dateTime: " + DateTime + "\t\tHash code: {0}", DateTime.GetHashCode());
+            Console.WriteLine("dayWeek: " + DayWeek + "\tHash code: {0}", DayWeek.GetHashCode());
+        }
+        
+        
+    }
+
     class Program
     {
-        class Airline
-        {
-            string destination;
-            int flight;
-            string typeAirplane;
-            DateTime dateTime;
-            int dayWeek;
-        }
 
 
         static void Main(string[] args)
         {
+           
+
+            Airline aeroflot = new Airline("Aeroflot","minsk",5,"boeing",99.99f,"mo we");
+            Airline belavia = new Airline("Belavia","moskva", 4, "tu", 10.44f, "th fr");
+            Airline flydubai = new Airline("Fly-dubai","abu-dabi", 6, "emirates", 8.00f, "mo we fr su");
+            Airline airfrance = new Airline("Air France","paris", 6, "airbus", 11.21f, "tu we st");
+            var airberlin = new Airline("Air Berlin","minsk", 5, "bombardier", 17.30f, "mo we th st su"); // анонимный тип
+            Airline[] AllAir = new Airline[] {aeroflot, belavia, flydubai, airfrance, airberlin}; //массив объектов
+                        
+            Console.WriteLine("Введите необходимый пункт назначения: ");
+            string pointDest = Console.ReadLine();
+
+            foreach (Airline allA in AllAir)
+            {
+                if (allA.Destination.Contains(pointDest))
+                { allA.Print(); Console.WriteLine(); }
+                else Console.WriteLine("\n{0} не летает\n", allA.Name);
+            }
+            Console.WriteLine("Введите необходимый день недели вылета в формате (mo tu we th fr sa su): ");
+            string pointWeek = Console.ReadLine();
+
+            foreach (Airline allA in AllAir)
+            {
+                if (allA.DayWeek.Contains(pointWeek))
+                { allA.Print(); Console.WriteLine(); }
+                else Console.WriteLine("\n{0} не летает\n", allA.Name);
+            }
+            Console.WriteLine(aeroflot.Equals(belavia));
+            Console.WriteLine(aeroflot.GetHashCode()== belavia.GetHashCode() );
+            Console.WriteLine(belavia.GetType());
+ 
+            Console.ReadKey();
             // Лабораторная работа №3 (Проектирование типов. Классы.)
             /*
                         Задание
@@ -47,4 +174,9 @@ a)  список рейсов для заданного пункта назна�
 
         }
     }
+}
+
+    partial class Airline
+{
+
 }

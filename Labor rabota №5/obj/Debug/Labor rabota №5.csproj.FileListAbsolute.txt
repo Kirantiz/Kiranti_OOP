@@ -1,0 +1,6 @@
+F:\Git\Kiranti_OOP\Labor rabota №5\obj\Debug\Labor rabota №5.csprojAssemblyReference.cache
+F:\Git\Kiranti_OOP\Labor rabota №5\bin\Debug\Labor rabota №5.exe.config
+F:\Git\Kiranti_OOP\Labor rabota №5\bin\Debug\Labor rabota №5.exe
+F:\Git\Kiranti_OOP\Labor rabota №5\bin\Debug\Labor rabota №5.pdb
+F:\Git\Kiranti_OOP\Labor rabota №5\obj\Debug\Labor rabota №5.exe
+F:\Git\Kiranti_OOP\Labor rabota №5\obj\Debug\Labor rabota №5.pdb

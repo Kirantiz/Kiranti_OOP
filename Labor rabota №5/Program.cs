@@ -46,8 +46,12 @@ namespace Labor_rabota__5
             get {return engineType; }
             set {engineType = value; }
         }
+        
+        public string nameCap;
+        public byte ageCap;
+        public byte termCap;
 
-        public void Constructor()
+        public virtual void Constructor()
         {
             count++;
             this.Name = Name;
@@ -57,7 +61,7 @@ namespace Labor_rabota__5
             this.EngineType = EngineType;
             
         }
-        public void Constructor(string _default)
+        public virtual void Constructor(string _default)
         {
             count++;
             Name = "Unknown ship №" + count;
@@ -66,7 +70,7 @@ namespace Labor_rabota__5
             MadeOf = "Steel";
             EngineType = "Unknown";
         }
-        public void Constructor(string name, int speed, int crew, string madeOf, string engineType)
+        public virtual void Constructor(string name, int speed, int crew, string madeOf, string engineType)
         {
             count++;
             this.Name = name;
@@ -74,6 +78,21 @@ namespace Labor_rabota__5
             this.Crew = crew;
             this.MadeOf = madeOf;
             this.EngineType = engineType;
+        }
+        public virtual void appointCap(Capitan capTan)
+        {
+            if (capStatus == true) Console.WriteLine("На корабле уже есть капитан");
+            if (capTan.BusyCap == true) Console.WriteLine("Капитан уже работает на другом корабле");
+            if (capStatus == false && capTan.BusyCap == false)
+            {
+                capStatus = true;
+                capTan.BusyCap = true;
+                nameCap = capTan.NameCap;
+                ageCap = capTan.AgeCap;
+                termCap = capTan.TermCap;
+            }
+            
+            
         }
 
             public virtual void Print()
@@ -92,17 +111,32 @@ namespace Labor_rabota__5
         public Ship()       //конструктор
         {
             base.Constructor();
-            capStatus = true;            
         }
         public Ship(string _default)                    //конструктор по умолчанию
         {
             base.Constructor("default");
-            capStatus = true;
         }
         public Ship(string name, int speed, int crew, string madeOf, string engineType)
         {
             base.Constructor(name,speed,crew,madeOf,engineType);
-            capStatus = true;
+        }
+
+        public override string ToString()
+        {
+            Console.WriteLine("Имя транспорта: {0}", Name);
+            Console.WriteLine("Скорость транспорта: {0}", Speed);
+            Console.WriteLine("Экипаж транспорта: {0}", Crew);
+            Console.WriteLine("Материал транспорта: {0}", MadeOf);
+            Console.WriteLine("Тип двигателя транспорта: {0}", EngineType);
+            Console.WriteLine("Капитан водного транспорта: {0}\n", capStatus);
+            if (capStatus == true)
+            {
+                Console.WriteLine("Информация о капитане: ");
+                Console.WriteLine("Имя: {0}", nameCap);
+                Console.WriteLine("Возраст: {0}", ageCap);
+                Console.WriteLine("Срок службы: {0}\n", termCap);
+            }
+            return base.ToString();
         }
     }
 
@@ -111,19 +145,34 @@ namespace Labor_rabota__5
         public Steamboat()
         {
             base.Constructor();
-            capStatus = true;
         }
 
         public Steamboat(string _default)
         {
             base.Constructor("default");
-            capStatus = true;
         }
 
         public Steamboat(string name, int speed, int crew, string madeOf, string engineType)
         {
             base.Constructor(name, speed, crew, madeOf, engineType);
-            capStatus = true;
+        }
+
+        public override string ToString()
+        {
+            Console.WriteLine("Имя транспорта: {0}", Name);
+            Console.WriteLine("Скорость транспорта: {0}", Speed);
+            Console.WriteLine("Экипаж транспорта: {0}", Crew);
+            Console.WriteLine("Материал транспорта: {0}", MadeOf);
+            Console.WriteLine("Тип двигателя транспорта: {0}", EngineType);
+            Console.WriteLine("Капитан водного транспорта: {0}\n", capStatus);
+            if(capStatus == true)
+            {
+                Console.WriteLine("Информация о капитане: ");
+                Console.WriteLine("Имя: {0}", nameCap);
+                Console.WriteLine("Возраст: {0}", ageCap);
+                Console.WriteLine("Срок службы: {0}\n", termCap);
+            }
+            return base.ToString();
         }
     }
    
@@ -143,6 +192,24 @@ namespace Labor_rabota__5
         {
             base.Constructor(name, speed, crew, madeOf, engineType);
         }
+
+        public override string ToString()
+        {
+            Console.WriteLine("Имя транспорта: {0}", Name);
+            Console.WriteLine("Скорость транспорта: {0}", Speed);
+            Console.WriteLine("Экипаж транспорта: {0}", Crew);
+            Console.WriteLine("Материал транспорта: {0}", MadeOf);
+            Console.WriteLine("Тип двигателя транспорта: {0}", EngineType);
+            Console.WriteLine("Капитан водного транспорта: {0}\n", capStatus);
+            if (capStatus == true)
+            {
+                Console.WriteLine("Информация о капитане: ");
+                Console.WriteLine("Имя: {0}", nameCap);
+                Console.WriteLine("Возраст: {0}", ageCap);
+                Console.WriteLine("Срок службы: {0}\n", termCap);
+            }
+            return base.ToString();
+        }
     }
 
    sealed class Corvette : Transport      //класс корвет
@@ -150,19 +217,34 @@ namespace Labor_rabota__5
         public Corvette()
         {
             base.Constructor();
-            capStatus = true;
         }
 
        public Corvette(string _default)
         {
             base.Constructor("default");
-            capStatus = true;
         }
 
         public Corvette(string name, int speed, int crew, string madeOf, string engineType)
         {
             base.Constructor(name, speed, crew, madeOf, engineType);
-            capStatus = true;
+        }
+
+        public override string ToString()
+        {
+            Console.WriteLine("Имя транспорта: {0}", Name);
+            Console.WriteLine("Скорость транспорта: {0}", Speed);
+            Console.WriteLine("Экипаж транспорта: {0}", Crew);
+            Console.WriteLine("Материал транспорта: {0}", MadeOf);
+            Console.WriteLine("Тип двигателя транспорта: {0}", EngineType);
+            Console.WriteLine("Капитан водного транспорта: {0}\n", capStatus);
+            if (capStatus == true)
+            {
+                Console.WriteLine("Информация о капитане: ");
+                Console.WriteLine("Имя: {0}", nameCap);
+                Console.WriteLine("Возраст: {0}", ageCap);
+                Console.WriteLine("Срок службы: {0}\n", termCap);
+            }
+            return base.ToString();
         }
     }
 
@@ -182,11 +264,105 @@ namespace Labor_rabota__5
         {
             base.Constructor(name, speed, crew, madeOf, engineType);
         }
+
+        public override string ToString()
+        {
+            Console.WriteLine("Имя транспорта: {0}", Name);
+            Console.WriteLine("Скорость транспорта: {0}", Speed);
+            Console.WriteLine("Экипаж транспорта: {0}", Crew);
+            Console.WriteLine("Материал транспорта: {0}", MadeOf);
+            Console.WriteLine("Тип двигателя транспорта: {0}", EngineType);
+            Console.WriteLine("Капитан водного транспорта: {0}\n", capStatus);
+            if (capStatus == true)
+            {
+                Console.WriteLine("Информация о капитане: ");
+                Console.WriteLine("Имя: {0}", nameCap);
+                Console.WriteLine("Возраст: {0}", ageCap);
+                Console.WriteLine("Срок службы: {0}\n", termCap);
+            }
+            return base.ToString();
+        }
     }
  
     class Printer
     {
+      public void iAmPrinting(Transport someobj)
+        {
 
+        }
+    }
+
+   public class Capitan
+    {
+        private string nameCap;
+        private byte ageCap;
+        private byte termCap;
+        private bool busyCap;
+        public static int countCap=0;
+
+        public string NameCap
+        {
+            get { return nameCap; }
+            set { nameCap = value; }
+        }
+
+        public byte AgeCap
+        {
+            get { return ageCap; }
+            set { if (value < 1) ageCap = 1;
+                else ageCap = value; }
+        }
+
+        public byte TermCap
+        {
+            get { return termCap; }
+            set { if (value < 1) termCap = 1;
+                else termCap = value; }
+        }
+
+        public bool BusyCap
+        {
+            get { return busyCap; }
+            set { busyCap = value; }
+        }
+
+       public Capitan()
+        {
+            countCap++;
+            this.NameCap = NameCap;
+            this.AgeCap = AgeCap;
+            this.TermCap = TermCap;
+            this.BusyCap = BusyCap;
+        }
+        public Capitan(string _default)
+        {
+            countCap++;
+            NameCap = "Capitan №" + countCap;
+            AgeCap = 43;
+            TermCap = 5;
+            BusyCap = false;
+        }
+        public Capitan(string nameCap, byte ageCap, byte termCap)
+        {
+            countCap++;
+            NameCap = nameCap;
+            AgeCap = ageCap;
+            TermCap = termCap;
+            BusyCap = false;
+        }
+        public override string ToString()
+        {
+            Console.WriteLine("Имя капитана: {0}",NameCap);
+            Console.WriteLine("Возраст капитана: {0}", AgeCap);
+            Console.WriteLine("Срок службы: {0}", TermCap);
+            Console.WriteLine("Есть ли у капитана корабль: {0}\n", BusyCap);
+            return base.ToString();
+        }
+    }
+
+   public interface IappointCap
+    {
+       void appointCap();
     }
 
     class Program
@@ -202,7 +378,7 @@ namespace Labor_rabota__5
             Steamboat s1 = new Steamboat();
             Steamboat s2 = new Steamboat("default");
             Steamboat s3 = new Steamboat("Parahod", 110, 35, "Steel", "Steam");
-
+         
             Sailboat ss1 = new Sailboat();
             Sailboat ss2 = new Sailboat("default");
             Sailboat ss3 = new Sailboat("Parusnik", 150, 2, "Plastic", "Wind");
@@ -215,7 +391,30 @@ namespace Labor_rabota__5
             Boat bv2 = new Boat("default");
             Boat bv3 = new Boat("lodo4ka", 20, 2, "wood", "vesla");
 
-            b1.Print();
+            Capitan cap1 = new Capitan();
+            Capitan cap2 = new Capitan("default");
+            Capitan cap3 = new Capitan("Joan", 62, 7);
+
+            // Console.WriteLine(cap3.ToString());
+            // Console.WriteLine(s1.ToString());
+            /*
+             s1.appointCap(cap3);
+             s2.appointCap(cap3);
+            */
+            // Console.WriteLine(cap3.ToString());
+            //Console.WriteLine(s1.ToString());
+
+            if (b3 is Transport && cap3 is Capitan) b3.appointCap(cap1);
+            else Console.WriteLine("Неправельные объекты! Надо <Транспорт>.appointCap(<Капитан>)");
+            /*
+            b3.appointCap(cap1);
+            s3.appointCap(cap2);
+            ss3.appointCap(cap3);
+            b3.ToString();
+            s3.ToString();
+            ss3.ToString();*/
+
+       /*     b1.Print();
             b2.Print();
             b3.Print();
             s1.Print();
@@ -229,9 +428,13 @@ namespace Labor_rabota__5
             c3.Print();
             bv1.Print();
             bv2.Print();
-            bv3.Print();
+            bv3.Print();*/
+
+
             
             Console.WriteLine("Всего число транспортов: {0}",Transport.count);
+            Console.WriteLine("Всего число капитанов: {0}", Capitan.countCap);
+
 
             Console.ReadKey();
 

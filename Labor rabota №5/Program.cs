@@ -437,7 +437,7 @@ namespace Labor_rabota__5
 
 
             Console.ReadKey();
-
+            //12345
             
             /*
                                     Лабораторная работа №5

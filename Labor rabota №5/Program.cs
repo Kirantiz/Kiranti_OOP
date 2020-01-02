@@ -248,21 +248,21 @@ namespace Labor_rabota__5
         }
     }
 
-   sealed class Boat : Transport          //класс лодка
+   sealed class Boat : Transport      //класс лодка
     {
           public Boat()
         {
-            base.Constructor();
+            Constructor();
         }
 
         public Boat(string _default)
         {
-            base.Constructor("default");
+            Constructor("default");
         }
 
         public Boat(string name, int speed, int crew, string madeOf, string engineType)
         {
-            base.Constructor(name, speed, crew, madeOf, engineType);
+            Constructor(name, speed, crew, madeOf, engineType);
         }
 
         public override string ToString()
@@ -284,7 +284,7 @@ namespace Labor_rabota__5
         }
     }
  
-   public class Printer
+   public class Printer :IPrinter
     {
       public void iAmPrinting(Transport someobj)
         {
@@ -361,13 +361,13 @@ namespace Labor_rabota__5
         }
     }
 
-    interface IappointCap
+    interface IPrinter
     {
-        public void move();
+         void iAmPrinting(Transport _someobj);
 
     }
 
-    class Program :IappointCap
+    class Program 
     {
         static void Main(string[] args)
         {
@@ -431,14 +431,14 @@ namespace Labor_rabota__5
                  bv1.Print();
                  bv2.Print();
                  bv3.Print();*/
-                 /*
+                 
             object[] ArrObj = new object[] { b3, s3, ss3, c3, b1 };
 
             Printer Print = new Printer();
 
             foreach (Transport forObj in ArrObj)
                 Print.iAmPrinting(forObj);
-                */
+                
 
 
             Console.WriteLine("Всего число транспортов: {0}",Transport.count);

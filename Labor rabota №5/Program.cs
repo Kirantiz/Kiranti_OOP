@@ -284,11 +284,12 @@ namespace Labor_rabota__5
         }
     }
  
-    class Printer
+   public class Printer
     {
       public void iAmPrinting(Transport someobj)
         {
-
+            Console.WriteLine(someobj.GetType());
+            someobj.ToString();
         }
     }
 
@@ -360,12 +361,13 @@ namespace Labor_rabota__5
         }
     }
 
-   public interface IappointCap
+    interface IappointCap
     {
-       void appointCap();
+        public void move();
+
     }
 
-    class Program
+    class Program :IappointCap
     {
         static void Main(string[] args)
         {
@@ -414,30 +416,37 @@ namespace Labor_rabota__5
             s3.ToString();
             ss3.ToString();*/
 
-       /*     b1.Print();
-            b2.Print();
-            b3.Print();
-            s1.Print();
-            s2.Print();
-            s3.Print();
-            ss1.Print();
-            ss2.Print();
-            ss3.Print();
-            c1.Print();
-            c2.Print();
-            c3.Print();
-            bv1.Print();
-            bv2.Print();
-            bv3.Print();*/
+            /*     b1.Print();
+                 b2.Print();
+                 b3.Print();
+                 s1.Print();
+                 s2.Print();
+                 s3.Print();
+                 ss1.Print();
+                 ss2.Print();
+                 ss3.Print();
+                 c1.Print();
+                 c2.Print();
+                 c3.Print();
+                 bv1.Print();
+                 bv2.Print();
+                 bv3.Print();*/
+                 /*
+            object[] ArrObj = new object[] { b3, s3, ss3, c3, b1 };
+
+            Printer Print = new Printer();
+
+            foreach (Transport forObj in ArrObj)
+                Print.iAmPrinting(forObj);
+                */
 
 
-            
             Console.WriteLine("Всего число транспортов: {0}",Transport.count);
             Console.WriteLine("Всего число капитанов: {0}", Capitan.countCap);
 
 
             Console.ReadKey();
-            //12345
+            
             
             /*
                                     Лабораторная работа №5

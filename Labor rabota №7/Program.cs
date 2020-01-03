@@ -54,7 +54,7 @@ namespace Labor_rabota__7
                     if (value < 1)
                     {
                         speed = 1;
-                        throw new MyOwnException("Скорость корабля не может быть меньше чем 1 (Автоматически изменено на \"1\")");
+                        throw new MyOwnException("Скорость корабля \""+ name+"\" не может быть меньше чем 1 (Автоматически изменено на \"1\")");
                     }
                     else speed = value;
                 }
@@ -74,7 +74,7 @@ namespace Labor_rabota__7
                     if (value < 1)
                     {
                         crew = 1;
-                        throw new MyOwnException("Посадочных мест не может быть меньше 1 (Автоматически изменено на \"1\")");
+                        throw new MyOwnException("Посадочных мест на корабле \"" + name + "\" не может быть меньше 1 (Автоматически изменено на \"1\")");
                     }
                     else crew = value;
                 }
@@ -91,8 +91,23 @@ namespace Labor_rabota__7
         public int Displacement
         {
             get { return displacement; }
-            set { if (value < 1) displacement = 1;
-                else displacement = value;
+            set {
+                try
+                {
+                    if (value < 1)
+                    { displacement = 1;
+                        throw new MyOwnException("Водоизмещение коробля \"" + name + "\" не может быть меньше 1(Автоматически изменено на \"1\")");
+                    }
+                    else displacement = value;
+                }
+                catch (MyOwnException ex)
+                {
+                    Console.WriteLine("Error: {0}", ex.Message);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error: {0}", ex.Message);
+                }
             }
         }
         public string MadeOf
@@ -424,32 +439,6 @@ namespace Labor_rabota__7
     {
         static void Main(string[] args)
         {
-            /*
-            Ship b1 = new Ship();
-            Ship b2 = new Ship("default");
-            Ship b3 = new Ship("kkk1", 90, 3,11500, Material.Steel.ToString(), Engine.Combustion.ToString());
-
-            Steamboat s1 = new Steamboat();
-            Steamboat s2 = new Steamboat("default");
-            Steamboat s3 = new Steamboat("Parahod", 110, 35, 55000, Material.Steel.ToString(), Engine.Steam.ToString());
-
-            Sailboat ss1 = new Sailboat();
-            Sailboat ss2 = new Sailboat("default");
-            Sailboat ss3 = new Sailboat("Parusnik", 150, 2, 2500, Material.Plastic.ToString(), Engine.Steam.ToString());
-
-            Corvette c1 = new Corvette();
-            Corvette c2 = new Corvette("default");
-            Corvette c3 = new Corvette("Corvet", 50, 10, 24000, Material.Titan.ToString(), Engine.Combustion.ToString());
-
-            Boat bv1 = new Boat();
-            Boat bv2 = new Boat("default");
-            Boat bv3 = new Boat("lodo4ka", 20, 2, 150, Material.Wood.ToString(), Engine.Physical.ToString());
-
-            Capitan cap1 = new Capitan();
-            Capitan cap2 = new Capitan("default");
-            Capitan cap3 = new Capitan("Joan", 62, 7);
-            */
-          
                 Ship Ship1 = new Ship("Ship №1", 60, 25, 11500, Material.Steel.ToString(), Engine.Combustion.ToString());
                 Ship Ship2 = new Ship("Ship №2", 65, 30, 13800, Material.Steel.ToString(), Engine.Combustion.ToString());
                 Ship Ship3 = new Ship("Ship №3", 50, 32, 9300, Material.Steel.ToString(), Engine.Combustion.ToString());
@@ -464,9 +453,9 @@ namespace Labor_rabota__7
                 Corvette Corvette3 = new Corvette("Corvette №3", 50, 10, 28690, Material.Steel.ToString(), Engine.Combustion.ToString());
                 Boat Boat1 = new Boat("Boat №1", 20, 4, 150, Material.Wood.ToString(), Engine.Physical.ToString());
                 Boat Boat2 = new Boat("Boat №2", 25, 3, 110, Material.Wood.ToString(), Engine.Physical.ToString());
-                Boat Boat3 = new Boat("", 30, 2, 90, Material.Wood.ToString(), Engine.Physical.ToString());
+                Boat Boat3 = new Boat("Boat №3", 30, 2, 90, Material.Wood.ToString(), Engine.Physical.ToString());
+                Boat boat4 = new Boat();
            
-         
             Capitan cap1 = new Capitan("Jonathan Meyer", 57, 5);
             Capitan cap2 = new Capitan("Benny Barker", 48, 7);
             Capitan cap3 = new Capitan("Reginald Collier", 49, 2);
@@ -516,14 +505,26 @@ namespace Labor_rabota__7
             port.PortList.Add(Boat1);
             port.PortList.Add(Boat2);
             port.PortList.Add(Boat3);
-            
-            if (port.PortList.Count < 1) throw new MyOwnException("Порт пустой, необходимо добавить в порт водный транспорт");
-
-                // PortManager.PrintList(port.PortList);
+            try
+            {
+                if (port.PortList.Count < 1) throw new MyOwnException("Порт пустой, необходимо добавить в порт водный транспорт");
+            }
+            catch(MyOwnException ex)
+            {
+                Console.WriteLine("Error: {0}", ex.Message);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: {0}", ex.Message);
+            }
+            finally
+            {
+                Console.WriteLine("finally");
+            }
+            // PortManager.PrintList(port.PortList);
                 PortManager.AvDis(port.PortList);
                 PortManager.AvCre(port.PortList);
                 PortManager.CapShip35(port.PortList);
-            //   Debug.Assert()
             // Console.WriteLine(cap3.ToString());
             // Console.WriteLine(s1.ToString());
             /*
@@ -571,12 +572,6 @@ namespace Labor_rabota__7
 
             Console.WriteLine("Всего число транспортов: {0}", Transport.count);
             Console.WriteLine("Всего число капитанов: {0}", Capitan.countCap);
-
-           /* cargo cargo1;
-            cargo1.cargoName = "gold";
-            cargo1.cargoweight = 3;
-            cargo1.CargoShow();*/
-
             Console.ReadKey();
 
 
@@ -584,11 +579,16 @@ namespace Labor_rabota__7
                                     Лабораторная работа №7
 Задание
 Дополнить предыдущую лабораторную работу № 6. 
-Создать иерархию классов исключений (собственных) –  3  типа и более. Сделать наследование пользовательских типов исключений от стандартных классов .Net (например Exception).
-Сгенерировать и обработать как минимум пять различных исключительных ситуаций на основе своих и стандартных исключений. Например, не позволять при инициализации объектов передавать неверные данные, обрабатывать ошибки при работе с памятью и ошибки работы  с файлами, деление на ноль, неверный индекс, нулевой указатель и т. д.
+Создать иерархию классов исключений (собственных) –  3  типа и более. Сделать наследование пользовательских типов 
+исключений от стандартных классов .Net (например Exception).
+Сгенерировать и обработать как минимум пять различных исключительных ситуаций на основе своих и стандартных исключений.
+Например, не позволять при инициализации объектов передавать неверные данные, обрабатывать ошибки при работе с памятью и 
+ошибки работы  с файлами, деление на ноль, неверный индекс, нулевой указатель и т. д.
 В конце поставить универсальный обработчик catch.
-Обработку исключений вынести в main. При обработке выводить специфическую информацию о месте, диагностику и причине исключения. Последним должен быть блок, который отлавливает все исключения (finally).
-Добавьте код в одной из функций макрос Assert. Объясните что он проверяет, как будет выполняться программа в случае не выполнения условия. Объясните назначение Assert. 
+Обработку исключений вынести в main. При обработке выводить специфическую информацию о месте, диагностику и причине 
+исключения. Последним должен быть блок, который отлавливает все исключения (finally).
+Добавьте код в одной из функций макрос Assert. Объясните что он проверяет, как будет выполняться программа в случае
+не выполнения условия. Объясните назначение Assert. 
 Пример:
 int[] aa= null;
             Debug.Assert(aa !=null, "Values array cannot be null");

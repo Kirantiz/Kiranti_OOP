@@ -18,4 +18,24 @@ namespace Labor_rabota__7
         {
         }
     }
+
+    public class MyDivideByZeroException : ApplicationException
+    {
+        public MyDivideByZeroException() :base("Обнаруженно деление на нуль")
+        {
+        }
+        public MyDivideByZeroException(string message) : base(message)
+        {
+        }
+    }
+
+    public class WrongParameter : ApplicationException
+    {
+        public WrongParameter() : base("Обнаружен неправельный параметр")
+        {
+        }
+        public WrongParameter(string message) : base(message)
+        {
+        }
+    }
 }

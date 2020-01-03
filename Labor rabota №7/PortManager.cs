@@ -28,12 +28,12 @@ namespace Labor_rabota__7
 
             try 
             { 
-            if (countAvDis == 0) throw new MyOwnException("В порту нету парусников");
+            if (countAvDis == 0) throw new MyDivideByZeroException("В порту нету парусников");
            
                 Console.WriteLine("Среднее водоизмещение всех парусников в порту: {0:##.##}", sumAvDis / countAvDis);
             }
            
-            catch (MyOwnException ex)
+            catch (MyDivideByZeroException ex)
             {
                 Console.WriteLine ("Error: {0}",ex.Message);
             }
@@ -62,10 +62,10 @@ namespace Labor_rabota__7
             }
             try
             {
-                if (countAvCre < 1) throw new MyOwnException("В порту нету пароходов");
+                if (countAvCre < 1) throw new MyDivideByZeroException("В порту нету пароходов");
                 Console.WriteLine("Среднее количество посадочных мест на параходах: {0:##.##}", sumAvCre / countAvCre);
             }
-            catch (MyOwnException ex)
+            catch (MyDivideByZeroException ex)
             {
                 Console.WriteLine("Error: {0}", ex.Message);
             }

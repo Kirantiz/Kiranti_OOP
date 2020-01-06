@@ -33,9 +33,25 @@ namespace labor_rabota__11
     */
             #endregion
 
+            string[] mesec = new string[] { "January", "February", "Mart", "April", "May", "June", "Jule", "August", "September", "October", "November", "December" };
 
+            int n=4;
 
+            Console.WriteLine(mesec[0]);
 
+            var simMon= from m in mesec
+                         where m.Length == n
+                         select m;
+            Console.WriteLine("Месяцы которые состоят из {0} символов", n);
+            foreach (var spismon in simMon)
+            {
+                Console.WriteLine(spismon);
+            }
+
+            //
+
+            //var result2 = mesec.Where(item => item.Length == 4);
+            Console.ReadKey();
         }
     }
 }

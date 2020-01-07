@@ -1,0 +1,8 @@
+Void sumXY(Int32, Int32)
+Boolean Equals(System.Object)
+Int32 GetHashCode()
+System.Type GetType()
+System.String ToString()
+Void .ctor()
+System.String name
+Int32 age

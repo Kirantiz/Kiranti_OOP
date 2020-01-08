@@ -4,3 +4,9 @@ D:\Git\Kiranti_OOP\labor rabota №11\bin\Debug\labor rabota №11.pdb
 D:\Git\Kiranti_OOP\labor rabota №11\obj\Debug\labor rabota №11.csprojAssemblyReference.cache
 D:\Git\Kiranti_OOP\labor rabota №11\obj\Debug\labor rabota №11.exe
 D:\Git\Kiranti_OOP\labor rabota №11\obj\Debug\labor rabota №11.pdb
+F:\Git\Kiranti_OOP\labor rabota №11\bin\Debug\labor rabota №11.exe.config
+F:\Git\Kiranti_OOP\labor rabota №11\bin\Debug\labor rabota №11.exe
+F:\Git\Kiranti_OOP\labor rabota №11\bin\Debug\labor rabota №11.pdb
+F:\Git\Kiranti_OOP\labor rabota №11\obj\Debug\labor rabota №11.csprojAssemblyReference.cache
+F:\Git\Kiranti_OOP\labor rabota №11\obj\Debug\labor rabota №11.exe
+F:\Git\Kiranti_OOP\labor rabota №11\obj\Debug\labor rabota №11.pdb

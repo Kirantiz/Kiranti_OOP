@@ -108,7 +108,7 @@ namespace labor_rabota__11
                 var testJoin = AirList.Join(AirList2, // второй набор
              p => p.Name, // свойство-селектор объекта из первого набора
              t => t.Name, // свойство-селектор объекта из второго набора
-             (p, t) => new { Name = p.Name, Data = p.DateTime, Country = t.DayWeek }); // результат
+             (p, t) => new { Name = p.Name, Data = p.DateTime, Day = t.DayWeek }); // результат
 
 
             foreach (var te in testJoin)

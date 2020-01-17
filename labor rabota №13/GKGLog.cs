@@ -31,7 +31,7 @@ namespace labor_rabota__13
         {
             using(var rw = new StreamReader("GKGlogfile.txt"))
             {
-                Console.WriteLine("Лог действия с файлами за последний ча");
+                Console.WriteLine("Лог действия с файлами за последний чаc: ");
                 string line;
                 string datline;
                 int count = 0;

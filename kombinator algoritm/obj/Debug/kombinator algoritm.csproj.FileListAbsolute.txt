@@ -1,0 +1,6 @@
+C:\Users\Kiranti\source\repos\kombinator algoritm\bin\Debug\kombinator algoritm.exe.config
+C:\Users\Kiranti\source\repos\kombinator algoritm\bin\Debug\kombinator algoritm.exe
+C:\Users\Kiranti\source\repos\kombinator algoritm\bin\Debug\kombinator algoritm.pdb
+C:\Users\Kiranti\source\repos\kombinator algoritm\obj\Debug\kombinator algoritm.csprojAssemblyReference.cache
+C:\Users\Kiranti\source\repos\kombinator algoritm\obj\Debug\kombinator algoritm.exe
+C:\Users\Kiranti\source\repos\kombinator algoritm\obj\Debug\kombinator algoritm.pdb

@@ -164,7 +164,7 @@ namespace kombinator_algoritm
                         k1 = m1; k2 = m2; k3 = m3; k4 = m4; k5 = m5;
                     }
                 }
-                if (centr > 0.95 && centr < 1.05)     //центрирование груза
+                if (centr > 0.99 && centr < 1.01)     //центрирование груза
                 {
                     if (resdohod < dohod)                               //максимальный доход
                     {
@@ -174,7 +174,7 @@ namespace kombinator_algoritm
                 }
 
 
-                if (centr > 0.95 && centr < 1.05)   //показание подбора с учётом центрирования груза
+                if (centr > 0.99 && centr < 1.01)   //показание подбора с учётом центрирования груза
                 {
                     Console.WriteLine(str + "\t" + sum + "\t" + dohod);
                 }

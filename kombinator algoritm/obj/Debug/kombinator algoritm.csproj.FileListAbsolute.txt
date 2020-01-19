@@ -10,3 +10,9 @@ F:\Git\Kiranti_OOP\kombinator algoritm\bin\Debug\kombinator algoritm.pdb
 F:\Git\Kiranti_OOP\kombinator algoritm\obj\Debug\kombinator algoritm.csprojAssemblyReference.cache
 F:\Git\Kiranti_OOP\kombinator algoritm\obj\Debug\kombinator algoritm.exe
 F:\Git\Kiranti_OOP\kombinator algoritm\obj\Debug\kombinator algoritm.pdb
+D:\Git\Kiranti_OOP\kombinator algoritm\bin\Debug\kombinator algoritm.exe.config
+D:\Git\Kiranti_OOP\kombinator algoritm\bin\Debug\kombinator algoritm.exe
+D:\Git\Kiranti_OOP\kombinator algoritm\bin\Debug\kombinator algoritm.pdb
+D:\Git\Kiranti_OOP\kombinator algoritm\obj\Debug\kombinator algoritm.csprojAssemblyReference.cache
+D:\Git\Kiranti_OOP\kombinator algoritm\obj\Debug\kombinator algoritm.exe
+D:\Git\Kiranti_OOP\kombinator algoritm\obj\Debug\kombinator algoritm.pdb

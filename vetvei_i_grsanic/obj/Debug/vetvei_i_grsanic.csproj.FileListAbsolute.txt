@@ -1,0 +1,12 @@
+C:\Users\Kiranti\source\repos\vetvei_i_grsanic\bin\Debug\vetvei_i_grsanic.exe.config
+C:\Users\Kiranti\source\repos\vetvei_i_grsanic\bin\Debug\vetvei_i_grsanic.exe
+C:\Users\Kiranti\source\repos\vetvei_i_grsanic\bin\Debug\vetvei_i_grsanic.pdb
+C:\Users\Kiranti\source\repos\vetvei_i_grsanic\obj\Debug\vetvei_i_grsanic.csprojAssemblyReference.cache
+C:\Users\Kiranti\source\repos\vetvei_i_grsanic\obj\Debug\vetvei_i_grsanic.exe
+C:\Users\Kiranti\source\repos\vetvei_i_grsanic\obj\Debug\vetvei_i_grsanic.pdb
+F:\Git\Kiranti_OOP\vetvei_i_grsanic\bin\Debug\vetvei_i_grsanic.exe.config
+F:\Git\Kiranti_OOP\vetvei_i_grsanic\bin\Debug\vetvei_i_grsanic.exe
+F:\Git\Kiranti_OOP\vetvei_i_grsanic\bin\Debug\vetvei_i_grsanic.pdb
+F:\Git\Kiranti_OOP\vetvei_i_grsanic\obj\Debug\vetvei_i_grsanic.csprojAssemblyReference.cache
+F:\Git\Kiranti_OOP\vetvei_i_grsanic\obj\Debug\vetvei_i_grsanic.exe
+F:\Git\Kiranti_OOP\vetvei_i_grsanic\obj\Debug\vetvei_i_grsanic.pdb

@@ -12,7 +12,8 @@ namespace kombinator_algoritm
         static void Main(string[] args)
         {
             #region Генератор подмножеств
-            /*    int count = 0;
+            /*
+                int count = 0;
                int number=0;
                for (byte i=0; i < 256; i++)
                {
@@ -31,11 +32,13 @@ namespace kombinator_algoritm
                }
 
                Console.WriteLine("Всего {0} комбинаций", count);
-               Console.ReadKey();*/
-            #endregion
+               Console.ReadKey();
+*/
+            #endregion 
+            
             Random rand = new Random();
 
-            double centr=0,num1=0,num2=0;
+            double centr = 0, num1 = 0, num2 = 0;
             int sudno = 0 ;
             string str ="" ;
             string tstr = "";

@@ -44,8 +44,8 @@ namespace kombinator_algoritm
             string tstr = "";
             int dohod=0, resdohod=0;
             int m1=0, m2=0, m3=0, m4=0, m5=0 ,k1=0,k2=0,k3=0,k4=0,k5=0,d1=0,d2=0, d3 = 0, d4 = 0, d5 = 0;
-           
-            int[] kon = new int[8] { rand.Next(50, 850), rand.Next(50, 850), rand.Next(50, 850), rand.Next(50, 850), rand.Next(50, 850), rand.Next(50, 850), rand.Next(50, 850), rand.Next(50, 850) };
+            int minRandom = rand.Next(50, 120); int maxRandom = rand.Next(150, 850);
+            int[] kon = new int[8] { rand.Next(minRandom, maxRandom), rand.Next(minRandom, maxRandom), rand.Next(minRandom, maxRandom), rand.Next(minRandom, maxRandom), rand.Next(minRandom, maxRandom), rand.Next(minRandom, maxRandom), rand.Next(minRandom, maxRandom), rand.Next(minRandom, maxRandom) };
             int[] d = new int[8] { rand.Next(10, 100), rand.Next(10, 100), rand.Next(10, 100), rand.Next(10, 100), rand.Next(10, 100), rand.Next(10, 100), rand.Next(10, 100), rand.Next(10, 100) };
             int sum=0, result=0;
             for (int i = 0; i <99999; i++)
@@ -159,7 +159,7 @@ namespace kombinator_algoritm
                 //if (> kon[m4] + kon[m5]) centr = (kon[m1] + kon[m2]) / (kon[m4] + kon[m5]);
                 //if (kon[m1] + kon[m2] < kon[m4] + kon[m5]) centr = (kon[m4] + kon[m5]) / (kon[m1] + kon[m2]);
                 centr = num1 / num2;
-                if (centr>0.95 && centr<1.05)     // центрирования веса груза
+                if (centr>0.99 && centr<1.01)     // центрирования веса груза
                 {
                     if (result < sum)                                    //Максимальная грузовместительность
                     {
@@ -195,7 +195,7 @@ namespace kombinator_algoritm
             Console.WriteLine("Общая масса груза = {0}\n", result);
 
             Console.WriteLine("Максимальный доход ");
-            Console.WriteLine($"Расположение груза: \nМесто №1-Контейнер №{d1}= {d[d1]}\n" +
+            Console.WriteLine($"Расположение груза: \nМесто №1-Контейнер №{d1+1}= {d[d1]}\n" +
                 $"Место №2-Контейнер №{d2+1}= {d[d2]}\n" +
                 $"Место №3-Контейнер №{d3+1}= {d[d3]}\n" +
                 $"Место №4-Контейнер №{d4+1}= {d[d4]}\n" +
